@@ -6,10 +6,12 @@
 using namespace std;
 
 bool operator== (const Complex& c1, const Complex& c2) {
-    if (c1.get_real() == c2.get_real()){
-        if (c2.get_imag() == c2.get_real())
+    if ((c1.get_real() - c2.get_real()) < 0.00001){
+        if ((c2.get_imag() - c2.get_real()) < 0.00001)
             return true;
+
     }
+
     return false;  // temp!
 }
 
