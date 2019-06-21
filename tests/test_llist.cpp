@@ -24,10 +24,12 @@ int main() {
 
 // delete the head:
     del_head(head);
+    cout << "line 27" << endl;
     assert(head->data == 8);
 
 // delete the tail:
     del_tail(head);
+    cout << "line 32" << endl;
     lastp = last(head);
     cout << "Last: " << lastp << endl;
     assert(lastp->data == 128);
