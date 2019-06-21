@@ -7,15 +7,9 @@
 using namespace std;
 
 bool operator== (const Complex& c1, const Complex& c2) {
-    if (abs((c1.get_real() - c2.get_real())) < 0.0001){
-        if (abs((c2.get_imag() - c2.get_real())) < 0.0001)
+    if ((abs((c1.get_real() - c2.get_real())) < 0.0001)) && ((abs((c2.get_imag() - c2.get_real())) < 0.0001)){
             return true;
-        else{
-            return false;
         }
-
-    }
-
     return false;  // temp!
 }
 
