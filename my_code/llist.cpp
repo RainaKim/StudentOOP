@@ -99,8 +99,7 @@ Node* duplicate(Node* head){
 	if (!head){
 		return nullptr;
 	} else{
-		head = head->next;
-		return duplicate(new Node(head->data,head->next));
+		return new Node(head->data,duplicate(head->next));
 	}
 }
 
@@ -120,6 +119,10 @@ Node* reverse(Node* curr, Node* new_next){
  * Use existing memory.
  * */
 Node* join(Node*& list1, Node* list2){
+	if (!list1){
+		list1 = list2;
+		return list1;
+	}
 	last(list1)->next = list2;
 	return list1;
 }
