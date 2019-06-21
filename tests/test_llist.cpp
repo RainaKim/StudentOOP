@@ -62,8 +62,6 @@ int main() {
     cout << "Joined lists: \n";
     print_list(cout, head);
     lastp = last(head);
-    print_list(cout, head);
     assert(lastp->data == 8);
-    cout << "DONE\n";
 
 }
