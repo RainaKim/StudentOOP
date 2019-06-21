@@ -86,7 +86,7 @@ bool del_tail(Node*& curr){
 			curr = nullptr;
 			return true;
 		} else{
-			del_tail(curr->next);
+			return del_tail(curr->next);
 		}
 	}
 	
