@@ -63,6 +63,6 @@ int main() {
     print_list(cout, head);
     lastp = last(head);
     assert(lastp->data == 8);
-    cout << "DONE"
+    cout << "DONE";
 
 }
