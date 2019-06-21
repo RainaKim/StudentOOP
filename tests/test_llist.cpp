@@ -28,8 +28,8 @@ int main() {
     assert(head->data == 8);
 
 // delete the tail:
+    cout << "line 31" << endl;
     del_tail(head);
-    cout << "line 32" << endl;
     lastp = last(head);
     cout << "Last: " << lastp << endl;
     assert(lastp->data == 128);
