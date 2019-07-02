@@ -83,25 +83,45 @@ class Bst {
                 return this;
             }
             else if (data > d){
-                return right->search(d);
+                if(!left) return nullptr;
+                return left->search(d);
             }
             else{
-                return left->search(d);
+                if(!right) return nullptr;
+                return right->search(d);
             }
         }
 
         Bst<T>* predecessor(const T d){
-            if (left){
-                return search(left->max());
+            Bst<T>* var=search(d);
+            if (var->left){
+                return search(var->left->max());
             }
             else{
-                while(parent){
-                    if (parent->data < d){
+                while(var->parent){
+                    if (var->parent->data < d){
                         break;
                     }
-                    parent = parent->parent;
+                    var->parent = var->parent->parent;
                 }
-                return parent;
+                return var->parent;
+            }
+        }
+
+        Bst<T>* successor(const T d){
+            Bst<T>* var=search(d);
+            if (var->right){
+                return search(var->right->min());
+            }
+            else{
+                while(var->parent){
+                    if (var->parent->data > d){
+                        break;
+                    }
+                    var->parent = var->parent->parent;
+                }
+                return var->parent;
+                //
             }
         }
 
